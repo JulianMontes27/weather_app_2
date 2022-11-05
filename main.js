@@ -32,8 +32,8 @@ window.addEventListener('load', ()=>{
                     const descrip= data.weather[0].description;
             
                     weatherDegrees.textContent= `${degrees} ºC`;
-                    weatherInfo.textContent= descrip;
-                    weatherRange.textContent= `${Math.round(data.main.  temp_min)} / ${Math.round(data.main.temp_max)} ºC`;
+                    weatherInfo.textContent= descrip[0].toUpperCase() + descrip.slice(1);
+                    weatherRange.innerHTML= `<span style="font-size: 1.25rem"> min </span> ${Math.round(data.main.  temp_min)} / <span style="font-size: 1.25rem"> max </span> ${Math.round(data.main.temp_max)} ºC`;
                 
                     place.innerText= `${data.name}, ${data.sys.country}`;
                     date.innerText= `${new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) 
@@ -64,16 +64,9 @@ async function apiQuery (query=''){
     const descrip= data.weather[0].description;
 
     weatherDegrees.textContent= `${degrees} ºC`;
-    weatherInfo.textContent= descrip;
-    weatherRange.textContent= `${Math.round(data.main.temp_min)} / ${Math.round(data.main.temp_max)} ºC`;
+    weatherInfo.textContent= descrip[0].toUpperCase() + descrip.slice(1);
+    weatherRange.innerHTML= `<span style="font-size: 1.25rem"> min </span> ${Math.round(data.main.temp_min)} / <span style="font-size: 1.25rem"> max </span>${Math.round(data.main.temp_max)} ºC`;
     
     place.innerText= `${data.name}, ${data.sys.country}`;
-
-    //fetch(`${api.url}q=${query}&APPID=${api.key}`)  
-        //.then(response=>{
-            //return response.json()
-       // }).then(data=>{
-           // console.log(data)
-       // })
 }
 

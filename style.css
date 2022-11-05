@@ -81,6 +81,8 @@ header{
 
 .location-info h1{
     font-size: 3.50rem;
+    text-shadow: 1px 1px 3px #fff;
+
 }
 
 .location-info p{
@@ -101,4 +103,13 @@ header{
 
 .weather-info h3{
     font-size: 2rem;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    margin-top:150px;
+    background-color: transparent;
 }
